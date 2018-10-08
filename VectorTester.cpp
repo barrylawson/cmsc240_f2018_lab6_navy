@@ -15,6 +15,36 @@ int main()
 
    std::cout << "--------------" << std::endl;
    std::cout << "IntegerVector:" << std::endl;
+   std::cout << "IntegerVector size: " << iv.size() << std::endl;
+   std::cout << "Testing put of '5': " << std::endl;
+   iv.put(5);
+   for(int i = 0; i < iv.size(); i++){
+      std::cout << iv.get(i) << std::endl;
+   }
+   std::cout << "IntegerVector size: " << iv.size() << std::endl;
+   std::cout << "Testing put of '6': " << std::endl;
+   iv.put(6);
+   for(int i = 0; i < iv.size(); i++){
+      std::cout << iv.get(i) << std::endl;
+   }
+   std::cout << "IntegerVector size: " << iv.size() << std::endl;
+   std::cout << "Testing put of '7' at index 1" << std::endl;
+   iv.put(7,1);
+   for(int i = 0; i < iv.size(); i++){
+      std::cout << iv.get(i) << std::endl;
+   }
+   std::cout << "IntegerVector size: " << iv.size() << std::endl;
+   
+   std::cout << "Testing put of '9' at index 4 (out of range): " << std::endl;
+   iv.put(9,4);
+   for(int i = 0; i < iv.size(); i++){
+      std::cout << iv.get(i) << std::endl;
+   }
+   std::cout << "IntegerVector size: " << iv.size() << std::endl;
+   
+
+
+
    std::cout << "--------------" << std::endl;
 
    //-------------------------------------------------------------------------

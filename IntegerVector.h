@@ -23,6 +23,7 @@ class IntegerVector
 
       void appendDoubleVector(DoubleVector& doubleVector);
       void appendCharacterVector(CharacterVector& characterVector);
+      void printVector();
 };
 
 #endif
