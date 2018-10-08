@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include "IntegerVector.h"
 #include "DoubleVector.h"
 #include "CharacterVector.h"
@@ -160,12 +161,12 @@ int main()
   
       //Testing put with index
   
-      dv.put(100.0, 1);
-      dv.put(200.0, 2);
+      dv.put(200.0, 1);
+      dv.put(300.0, 2);
   
       std::cout << "\nAfter Adding 2 Integers at indexes 1 and 2, print string " << std::endl;
       std::cout << "\tSize    : " << dv.size()    << " [5]" << std::endl;
-      std::cout << "\tContent : " << toString(dv) << " [1.1, 100.0, 200.0, 4.0, 5.0]" << std::endl;
+      std::cout << "\tContent : " << toString(dv) << " [1.1, 200.0, 300.0, 4.0, 5.0]" << std::endl;
 
       // Testing non-empty
       std::cout << std::endl << "Testing out of range:"     << std::endl;
@@ -261,7 +262,7 @@ int main()
     std::cout << "\nAppending cv to dv" << std::endl;
     dvtemp2.appendCharacterVector(cv);
     std::cout << "\tSize    : "       << dvtemp2.size()    << " [10]" << std::endl;
-    std::cout << "\tContent : \n\t\t" << toString(dvtemp2) << " \n\t\t[1.1, 2.2, 3.3, 4.0, 5.0, 97.0, 98.0, 99.0, 100.0, 101.0]" << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(dvtemp2) << " \n\t\t[1.1, 200.0, 300.0, 4.0, 5.0, 97.0, 98.0, 99.0, 100.0, 101.0]" << std::endl;
 
     std::cout << "\n+++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
 }
@@ -280,7 +281,9 @@ std::string toString(CharacterVector v){
 std::string toString(DoubleVector v){
   std::string out("{");
   for(int i = 0; i < v.size(); ++i){
-    out += std::to_string(v.get(i));
+    std::ostringstream strs;
+    strs << v.get(i);
+    out += strs.str();
     if(i < v.size()-1)
       out += ", ";
   }
@@ -291,10 +294,13 @@ std::string toString(DoubleVector v){
 std::string toString(IntegerVector v){
   std::string out("{");
   for(int i = 0; i < v.size(); ++i){
-    out += std::to_string(v.get(i));
-    if(i < v.size()-1)
+     std::ostringstream strs;
+     strs << v.get(i);
+     out += strs.str();
+  if(i < v.size()-1)
       out += ", ";
   }
   out += "}";
   return out;
 }
+
