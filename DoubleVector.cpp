@@ -8,13 +8,16 @@
 DoubleVector::DoubleVector()  {}
 DoubleVector::~DoubleVector() {}
 
-int DoubleVector::size() 
+int DoubleVector::size()
 {
+
    return 0;
+
 }
 
 // just return the double at the specified index; use the at() method rather
 // than [] so that an out_of_range error will be thrown for an invalid index
+
 double DoubleVector::get(int index) 
 { 
    return 0;

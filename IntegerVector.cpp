@@ -8,9 +8,11 @@
 IntegerVector::IntegerVector()  {}
 IntegerVector::~IntegerVector() {}
 
-int IntegerVector::size() 
+int IntegerVector::size()
 {
+
    return integerVector.size();
+
 }
 
 // just return the integer at the specified index; use the at() method rather
@@ -18,6 +20,7 @@ int IntegerVector::size()
 int IntegerVector::get(int index)  
 { 
    return integerVector.at(index);
+
 }
 
 // if index is size-legitimate, put the value at that index;
