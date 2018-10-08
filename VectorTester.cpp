@@ -140,7 +140,7 @@ int main()
         std::cerr << "Out Of Range Exception thrown: " << e.what() << std::endl;
       }
 
-      // Testing non-empty CharacterVector
+      // Testing non-empty DoubleVector
       dv.put(1.1);
       dv.put(2.2);
       dv.put(3.3);
@@ -156,6 +156,15 @@ int main()
       std::cout << "\nAfter Adding 2 Integers (4, 5), print string " << std::endl;
       std::cout << "\tSize    : " << dv.size()    << " [5]" << std::endl;
       std::cout << "\tContent : " << toString(dv) << " [1.1, 2.2, 3.3, 4.0, 5.0]" << std::endl;
+  
+      //Testing put with index
+  
+      dv.put(100.0, 1);
+      dv.put(200.0, 2);
+  
+      std::cout << "\nAfter Adding 2 Integers at indexes 1 and 2, print string " << std::endl;
+      std::cout << "\tSize    : " << dv.size()    << " [5]" << std::endl;
+      std::cout << "\tContent : " << toString(dv) << " [1.1, 100.0, 200.0, 4.0, 5.0]" << std::endl;
 
       // Testing non-empty
       std::cout << std::endl << "Testing out of range:"     << std::endl;
