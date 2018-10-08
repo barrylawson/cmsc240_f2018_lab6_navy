@@ -10,13 +10,7 @@ DoubleVector::~DoubleVector() {}
 
 int DoubleVector::size()
 {
-<<<<<<< HEAD
   return doubleVector.size();
-=======
-
-   return doubleVector.size();
-
->>>>>>> abae1af5117ef38a7e537638d5a753139c7d5db2
 }
 
 // just return the double at the specified index; use the at() method rather
