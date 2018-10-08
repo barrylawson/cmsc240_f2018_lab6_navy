@@ -5,6 +5,7 @@
 
 std::string toString(CharacterVector v);
 std::string toString(DoubleVector v);
+std::string toString(IntegerVector v);
 
 int main()
 {
@@ -182,13 +183,78 @@ int main()
   std::cout << "appended-to IntegerVector:" << std::endl;
   std::cout << "--------------------------" << std::endl;
 
+  IntegerVector ivtemp1;
+  IntegerVector ivtemp2;
+
+  //Make copies for use in tests
+  for(int i = 0; i < iv.size(); ++i){
+    ivtemp1.put(iv.get(i));
+    ivtemp2.put(iv.get(i));
+  }
+
+    std::cout << "\nAppending cv to iv" << std::endl;
+    ivtemp1.appendCharacterVector(cv);
+    std::cout << "\tSize    : "       << ivtemp1.size()    << " [8]" << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(ivtemp1) << " \n\t\t[5, 7, 9, 97, 98, 99, 100, 101]" << std::endl;
+
+    std::cout << "\nAppending dv to iv" << std::endl;
+    ivtemp2.appendDoubleVector(dv);
+    std::cout << "\tSize    : "       << ivtemp2.size()    << " [13]" << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(ivtemp2) << " \n\t\t[5, 7, 9, 1, 2, 3, 4, 5]" << std::endl;
+
+    std::cout << "\n+++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
+
   std::cout << "----------------------------" << std::endl;
   std::cout << "appended-to CharacterVector:" << std::endl;
   std::cout << "----------------------------" << std::endl;
 
+  std::cout << "--------------" << std::endl;
+
+  CharacterVector cvtemp1;
+  CharacterVector cvtemp2;
+
+  //Make copies for use in tests
+  for(int i = 0; i < cv.size(); ++i){
+    cvtemp1.put(cv.get(i));
+    cvtemp2.put(cv.get(i));
+  }
+
+    std::cout << "\nAppending iv to cv" << std::endl;
+    cvtemp1.appendIntegerVector(iv);
+    std::cout << "\tSize    : "       << cvtemp1.size()    << " [8]" << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(cvtemp1) << " \n\t\t[5, 7, 9, 97, 98, 99, 100, 101]" << std::endl;
+
+    std::cout << "\nAppending dv to cv" << std::endl;
+    cvtemp2.appendDoubleVector(dv);
+    std::cout << "\tSize    : "       << cvtemp2.size()    << " [13]" << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(cvtemp2) << " \n\t\t[5, 7, 9, 1, 2, 3, 4, 5]" << std::endl;
+
+    std::cout << "\n+++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
+
   std::cout << "-------------------------" << std::endl;
   std::cout << "appended-to DoubleVector:" << std::endl;
   std::cout << "-------------------------" << std::endl;
+
+  DoubleVector dvtemp1;
+  DoubleVector dvtemp2;
+
+  //Make copies for use in tests
+  for(int i = 0; i < dv.size(); ++i){
+    dvtemp1.put(dv.get(i));
+    dvtemp2.put(dv.get(i));
+  }
+
+    std::cout << "\nAppending iv to dv" << std::endl;
+    dvtemp1.appendIntegerVector(iv);
+    std::cout << "\tSize    : "       << dvtemp1.size()    << " [8]" << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(dvtemp1) << " \n\t\t[5, 7, 9, 97, 98, 99, 100, 101]" << std::endl;
+
+    std::cout << "\nAppending cv to dv" << std::endl;
+    dvtemp2.appendCharacterVector(cv);
+    std::cout << "\tSize    : "       << dvtemp2.size()    << " [10]" << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(dvtemp2) << " \n\t\t[1.1, 2.2, 3.3, 4.0, 5.0, 97.0, 98.0, 99.0, 100.0, 101.0]" << std::endl;
+
+    std::cout << "\n+++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
 }
 
 std::string toString(CharacterVector v){
@@ -203,6 +269,17 @@ std::string toString(CharacterVector v){
 }
 
 std::string toString(DoubleVector v){
+  std::string out("{");
+  for(int i = 0; i < v.size(); ++i){
+    out += std::to_string(v.get(i));
+    if(i < v.size()-1)
+      out += ", ";
+  }
+  out += "}";
+  return out;
+}
+
+std::string toString(IntegerVector v){
   std::string out("{");
   for(int i = 0; i < v.size(); ++i){
     out += std::to_string(v.get(i));
