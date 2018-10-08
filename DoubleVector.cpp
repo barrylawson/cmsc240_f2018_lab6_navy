@@ -10,7 +10,13 @@ DoubleVector::~DoubleVector() {}
 
 int DoubleVector::size()
 {
+<<<<<<< HEAD
   return doubleVector.size();
+=======
+
+   return doubleVector.size();
+
+>>>>>>> abae1af5117ef38a7e537638d5a753139c7d5db2
 }
 
 // just return the double at the specified index; use the at() method rather
@@ -18,7 +24,7 @@ int DoubleVector::size()
 
 double DoubleVector::get(int index)
 {
-  return doubleVector.at(index);
+   return doubleVector.at(index);
 }
 
 // if index is size-legitimate, put the value at that index;
@@ -34,7 +40,7 @@ void DoubleVector::put(double value, int index)
 // use push_back to append
 void DoubleVector::put(double value)
 {
-  doubleVector.push_back(value);
+   doubleVector.push_back(value);
 }
 
 // for each integer in integerVector, use static_cast<double> to append as a
