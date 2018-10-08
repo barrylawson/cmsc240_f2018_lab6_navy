@@ -61,8 +61,8 @@ int main()
 
     std::cout << "--------------" << std::endl;
 
-    std::cout << "\tSize    : " << cv.size()    << " [0]" << std::endl;
-    std::cout << "\tContent : " << toString(cv) << " []" << std::endl;
+    std::cout << "\tSize    : " << cv.size()    << std::endl;
+    std::cout << "\tContent : " << toString(cv) << std::endl;
     try {
       std::cout << "\tGet(0) : " << cv.get(0) << " [N/A]";
     } catch(const std::out_of_range& e) {
@@ -71,8 +71,8 @@ int main()
     // Testing CharacterVector
     std::cout << std::endl << "Testing CharacterVector:" << std::endl;
 
-    std::cout << "\tSize    : " << cv.size()    << " [0]" << std::endl;
-    std::cout << "\tContent : " << toString(cv) << " []" << std::endl;
+    std::cout << "\tSize    : " << cv.size()    << std::endl;
+    std::cout << "\tContent : " << toString(cv) << std::endl;
     try {
       std::cout << "\tGet(0) : " << cv.get(0) << " [N/A]";
     } catch(const std::out_of_range& e) {
@@ -85,31 +85,31 @@ int main()
     cv.put('c');
 
     std::cout << "\nAfter Adding 3 Elements ('a', 'b', 'c'), test size and print cv.get(1)" << std::endl;
-    std::cout << "\tSize    : " << cv.size()  << " [3]" << std::endl;
-    std::cout << "\tContent : " << toString(cv) << " [a, b, c]" << std::endl;
-    std::cout << "\tGet(1)  : "   << cv.get(1)  << " [b]" << std::endl;
+    std::cout << "\tSize    : " << cv.size()  << std::endl;
+    std::cout << "\tContent : " << toString(cv) << std::endl;
+    std::cout << "\tGet(1)  : "   << cv.get(1)  << std::endl;
 
     cv.put('d');
     cv.put('e');
 
     std::cout << "\nAfter Adding 2 Elements ('d', 'e'), test size and print" << std::endl;
-    std::cout << "\tSize    : " << cv.size()    << " [5]" << std::endl;
-    std::cout << "\tContent : " << toString(cv) << " [a, b, c, d, e]" << std::endl;
+    std::cout << "\tSize    : " << cv.size()    << std::endl;
+    std::cout << "\tContent : " << toString(cv) <<  std::endl;
 
     // Testing non-empty
     std::cout << std::endl << "Testing out of range:" << std::endl;
 
-    std::cout << "\tSize    : " << cv.size()    << " [5]" << std::endl;
+    std::cout << "\tSize    : " << cv.size()    << std::endl;
     try {
-      std::cout << "\tGet(6)  : " << cv.get(6) << " [N/A]"
+      std::cout << "\tGet(6)  : " << cv.get(6) 
       << std::endl << std::endl;
     } catch(const std::out_of_range& e) {
       std::cerr << "Out Of Range Exception thrown: " << e.what() << std::endl;
     }
 
-    std::cout << "\n\tSize    : " << cv.size()    << " [5]" << std::endl;
+    std::cout << "\n\tSize    : " << cv.size()    << std::endl;
     try {
-      std::cout << "\tGet(-1) : " << cv.get(-1) << " [N/A]"
+      std::cout << "\tGet(-1) : " << cv.get(-1)
       << std::endl << std::endl;
     } catch(const std::out_of_range& e) {
       std::cerr << "Out Of Range Exception thrown: " << e.what() << std::endl;
@@ -124,8 +124,8 @@ int main()
 
       std::cout << "--------------" << std::endl;
 
-      std::cout << "\tSize    : "   << dv.size()    << " [0]" << std::endl;
-      std::cout << "\tContent : "   << toString(dv) << " []" << std::endl;
+      std::cout << "\tSize    : "   << dv.size()    << std::endl;
+      std::cout << "\tContent : "   << toString(dv) << std::endl;
       try {
         std::cout << "\tGet(0) : "  << dv.get(0)    << " [N/A]";
       } catch(const std::out_of_range& e) {
@@ -134,8 +134,8 @@ int main()
       // Testing DoubleVector
       std::cout << std::endl << "Testing DoubleVector:"   << std::endl;
 
-      std::cout << "\tSize    : " << dv.size()    << " [0]" << std::endl;
-      std::cout << "\tContent : " << toString(dv) << " []" << std::endl;
+      std::cout << "\tSize    : " << dv.size()    << std::endl;
+      std::cout << "\tContent : " << toString(dv) << std::endl;
       try {
         std::cout << "\tGet(0) : " << dv.get(0)   << " [N/A]";
       } catch(const std::out_of_range& e) {
@@ -148,16 +148,16 @@ int main()
       dv.put(3.3);
 
       std::cout << "\nAfter Adding 3 Elements (1.1, 2.2, 3.3), test size and print dv.get(1)" << std::endl;
-      std::cout << "\tSize    : " << dv.size()  << " [3]" << std::endl;
-      std::cout << "\tContent : " << toString(dv) << " [1.1, 2.2, 3.3]" << std::endl;
-      std::cout << "\tGet(1)  : "   << dv.get(1)  << " [b]" << std::endl;
+      std::cout << "\tSize    : " << dv.size()  << std::endl;
+      std::cout << "\tContent : " << toString(dv) << << std::endl;
+      std::cout << "\tGet(1)  : "   << dv.get(1)  << std::endl;
 
       dv.put(4);
       dv.put(5);
 
       std::cout << "\nAfter Adding 2 Integers (4, 5), print string " << std::endl;
-      std::cout << "\tSize    : " << dv.size()    << " [5]" << std::endl;
-      std::cout << "\tContent : " << toString(dv) << " [1.1, 2.2, 3.3, 4.0, 5.0]" << std::endl;
+      std::cout << "\tSize    : " << dv.size()    << std::endl;
+      std::cout << "\tContent : " << toString(dv) << std::endl;
   
       //Testing put with index
   
@@ -165,13 +165,13 @@ int main()
       dv.put(300.0, 2);
   
       std::cout << "\nAfter Adding 2 Integers at indexes 1 and 2, print string " << std::endl;
-      std::cout << "\tSize    : " << dv.size()    << " [5]" << std::endl;
-      std::cout << "\tContent : " << toString(dv) << " [1.1, 200.0, 300.0, 4.0, 5.0]" << std::endl;
+      std::cout << "\tSize    : " << dv.size()    <<  std::endl;
+      std::cout << "\tContent : " << toString(dv) <<  std::endl;
 
       // Testing non-empty
       std::cout << std::endl << "Testing out of range:"     << std::endl;
 
-      std::cout << "\tSize    : " << dv.size()    << " [5]" << std::endl;
+      std::cout << "\tSize    : " << dv.size()    << std::endl;
       try {
         std::cout << "\tGet(6)  : " << dv.get(6)  << " [N/A]"
         << std::endl << std::endl;
@@ -179,9 +179,9 @@ int main()
         std::cerr << "Out Of Range Exception thrown: " << e.what() << std::endl;
       }
 
-      std::cout << "\n\tSize    : " << dv.size()  << " [5]" << std::endl;
+      std::cout << "\n\tSize    : " << dv.size()  << std::endl;
       try {
-        std::cout << "\tGet(-1) : " << dv.get(-1) << " [N/A]"
+        std::cout << "\tGet(-1) : " << dv.get(-1) 
         << std::endl << std::endl;
       } catch(const std::out_of_range& e) {
         std::cerr << "Out Of Range Exception thrown: " << e.what() << std::endl;
@@ -204,13 +204,13 @@ int main()
 
     std::cout << "\nAppending cv to iv" << std::endl;
     ivtemp1.appendCharacterVector(cv);
-    std::cout << "\tSize    : "       << ivtemp1.size()    << " [8]" << std::endl;
-    std::cout << "\tContent : \n\t\t" << toString(ivtemp1) << " \n\t\t[5, 7, 9, 97, 98, 99, 100, 101]" << std::endl;
+    std::cout << "\tSize    : "       << ivtemp1.size()    << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(ivtemp1) << std::endl;
 
     std::cout << "\nAppending dv to iv" << std::endl;
     ivtemp2.appendDoubleVector(dv);
-    std::cout << "\tSize    : "       << ivtemp2.size()    << " [13]" << std::endl;
-    std::cout << "\tContent : \n\t\t" << toString(ivtemp2) << " \n\t\t[5, 7, 9, 1, 2, 3, 4, 5]" << std::endl;
+    std::cout << "\tSize    : "       << ivtemp2.size()    << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(ivtemp2) << std::endl;
 
     std::cout << "\n+++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
 
@@ -231,13 +231,13 @@ int main()
 
     std::cout << "\nAppending iv to cv" << std::endl;
     cvtemp1.appendIntegerVector(iv);
-    std::cout << "\tSize    : "       << cvtemp1.size()    << " [8]" << std::endl;
-    std::cout << "\tContent : \n\t\t" << toString(cvtemp1) << " \n\t\t[5, 7, 9, 97, 98, 99, 100, 101]" << std::endl;
+    std::cout << "\tSize    : "       << cvtemp1.size()    << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(cvtemp1) << std::endl;
 
     std::cout << "\nAppending dv to cv" << std::endl;
     cvtemp2.appendDoubleVector(dv);
-    std::cout << "\tSize    : "       << cvtemp2.size()    << " [13]" << std::endl;
-    std::cout << "\tContent : \n\t\t" << toString(cvtemp2) << " \n\t\t[5, 7, 9, 1, 2, 3, 4, 5]" << std::endl;
+    std::cout << "\tSize    : "       << cvtemp2.size()    << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(cvtemp2) << std::endl;
 
     std::cout << "\n+++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
 
@@ -256,13 +256,13 @@ int main()
 
     std::cout << "\nAppending iv to dv" << std::endl;
     dvtemp1.appendIntegerVector(iv);
-    std::cout << "\tSize    : "       << dvtemp1.size()    << " [8]" << std::endl;
-    std::cout << "\tContent : \n\t\t" << toString(dvtemp1) << " \n\t\t[5, 7, 9, 97, 98, 99, 100, 101]" << std::endl;
+    std::cout << "\tSize    : "       << dvtemp1.size()    << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(dvtemp1) << std::endl;
 
     std::cout << "\nAppending cv to dv" << std::endl;
     dvtemp2.appendCharacterVector(cv);
-    std::cout << "\tSize    : "       << dvtemp2.size()    << " [10]" << std::endl;
-    std::cout << "\tContent : \n\t\t" << toString(dvtemp2) << " \n\t\t[1.1, 200.0, 300.0, 4.0, 5.0, 97.0, 98.0, 99.0, 100.0, 101.0]" << std::endl;
+    std::cout << "\tSize    : "       << dvtemp2.size()    << std::endl;
+    std::cout << "\tContent : \n\t\t" << toString(dvtemp2) << std::endl;
 
     std::cout << "\n+++++++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
 }
