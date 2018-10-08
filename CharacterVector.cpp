@@ -9,10 +9,6 @@ CharacterVector::CharacterVector()  {}
 CharacterVector::~CharacterVector() {}
 
 
-int CharacterVector::size() 
-{  
-   return 0;
-
 int CharacterVector::size()
 {
    return characterVector.size();
@@ -22,10 +18,6 @@ int CharacterVector::size()
 // just return the character at the specified index; use the at() method rather
 // than [] so that an out_of_range error will be thrown for an invalid index
 
-char CharacterVector::get(int index) 
-{ 
-   return 0;
-}
 char CharacterVector::get(int index)
 {
    return characterVector.at(index);
