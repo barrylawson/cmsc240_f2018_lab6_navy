@@ -149,7 +149,7 @@ int main()
 
       std::cout << "\nAfter Adding 3 Elements (1.1, 2.2, 3.3), test size and print dv.get(1)" << std::endl;
       std::cout << "\tSize    : " << dv.size()  << std::endl;
-      std::cout << "\tContent : " << toString(dv) << << std::endl;
+      std::cout << "\tContent : " << toString(dv) << std::endl;
       std::cout << "\tGet(1)  : "   << dv.get(1)  << std::endl;
 
       dv.put(4);
